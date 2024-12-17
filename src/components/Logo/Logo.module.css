@@ -1,0 +1,13 @@
+.logo {
+    /* display: inline-flex; */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.travel {
+    color: #101828;
+}
+
+.trucks {
+    color: #475467;
+}

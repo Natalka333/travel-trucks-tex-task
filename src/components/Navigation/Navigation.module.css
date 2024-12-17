@@ -1,0 +1,32 @@
+.header_navig {
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+height: 72px;
+}
+
+.logo_navig {
+position: absolute;
+padding-left: 64px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding: 24px 652px 24px 450px;
+    margin-left: 200px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #101828;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navLinkActive {
+    color: #D84343;
+    text-decoration: underline;
+}
