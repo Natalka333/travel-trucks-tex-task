@@ -1,0 +1,159 @@
+
+.camper_details {
+    max-width: 1440px;
+    height: 1468px;
+    padding: 48px 64px 80px 64px;
+  }
+
+  
+  .name_container {
+    width: 1312px;
+    height: 112px;
+    margin-bottom: 28px;
+  }
+  
+  .name {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .price {
+    font-size: 24px;
+    line-height: 32px;
+    color: #101828;
+  }
+  .imageContainer {
+    display: flex;
+    gap: 16px; 
+    flex-wrap: wrap; 
+    width: 1312px;
+    height: 312px;
+    margin-bottom: 28px;
+  }
+  
+  .image {
+    width: 300px; 
+    height: 312px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation {
+    width: 1312px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    margin: 24px auto;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    padding: 0 16px;
+    font-size: 16px;
+  }
+  
+
+  .features {
+    width: 631px;
+    height: auto;
+    margin-right: 16px;
+    flex-shrink: 0;
+} 
+
+.booking_form {
+  padding: 44px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 64px; 
+  display: flex;
+  flex-direction: column;
+  top: 844px;
+
+}
+
+.booking_form h2 {
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #333;
+  text-align: center;
+}
+
+.booking_form p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #555;
+}
+
+.booking_form form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+    width: 527px;
+    height: 420px;
+}
+
+
+.booking_form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.booking_form input,
+.booking_form textarea {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%; 
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.booking_form input:focus,
+.booking_form textarea:focus {
+    border-color: #e74c3c; 
+}
+
+.booking_form textarea {
+    min-height: 100px;
+    resize: vertical; 
+}
+
+
+.booking_form button {
+  width: 166px;
+  height: 56px;
+  border-radius: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  cursor: pointer;
+  align-self: center; 
+  transition: background-color 0.3s;
+}
+.booking_form button:hover {
+  background-color: #c0392b;
+}
+  
+  .p_card {
+    font-size: 16px;
+    line-height: 24px;
+    color: #475467;
+    margin-bottom: 60px;
+  }
+  
