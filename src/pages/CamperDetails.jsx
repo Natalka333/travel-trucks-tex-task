@@ -1,4 +1,4 @@
-import CardDetails from "../components/CardDetails/Carddetails";
+import CardDetails from "../components/CardDetails/CardDetails";
 // import NavigationLinks from '../components/NavigationLinks/NavigationLinks';
 
 
