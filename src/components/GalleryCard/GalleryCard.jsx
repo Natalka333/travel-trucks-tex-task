@@ -7,6 +7,7 @@ import CamperCard from "../CamperCard/CamperCard";
 import FilterPanel from "../FilterPanel/FilterPanel";
 
 import css from './GalleryCard.module.css';
+import Loader from "../Loader/Loader";
 
 const ITEMS_PER_PAGE = 4; // Количество карточек на странице
 
@@ -17,15 +18,19 @@ const GalleryCard = () => {
     const [filters, setFilters] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const loadCampers = async () => {
             try {
+                setIsLoading(true); 
                 const data = await fetchCampers({ ...filters, page: currentPage, limit: ITEMS_PER_PAGE });
                 dispatch(setCampers(data.items)); 
                 setTotalPages(Math.ceil(data.total / ITEMS_PER_PAGE)); 
             } catch (error) {
                 console.error("Failed to load campers:", error);
+            } finally {
+                setIsLoading(false);
             }
         };
         loadCampers();
@@ -52,9 +57,7 @@ const GalleryCard = () => {
         }
     };
 
-    if (!Array.isArray(campers) || campers.length === 0) {
-        return <p>Loading...</p>;
-    }
+    if (isLoading) return <Loader />;
 
     return (
         <div className={css.pageContainer}>

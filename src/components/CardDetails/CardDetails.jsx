@@ -4,28 +4,33 @@ import { fetchCamperDetails } from "../../redux/campers/operations";
 import "react-image-gallery/styles/css/image-gallery.css";
 import css from './CardDetails.module.css'
 import NavigationLinks from "../NavigationLinks/NavigationLinks";
-
+import Loader from '../Loader/Loader'
 
 const CardDetails = () => {
     const { id } = useParams();
     const [camper, setCamper] = useState(null);
     const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const loadCamper = async () => {
             try {
+                setIsLoading(true);
                 const data = await fetchCamperDetails(id);
                 setCamper(data);
             } catch (err) {
                 console.error(err.message);
                 setError(err.message);
+            } finally {
+                setIsLoading(false);
             }
         };
         loadCamper();
     }, [id]);
 
+    if (isLoading) return <Loader />;
     if (error) return <p>Error: {error}</p>;
-    if (!camper) return <p>Loading...</p>;
+    if (!camper) return <Loader/>;
 
     const {
         name,
@@ -54,10 +59,8 @@ const CardDetails = () => {
                 ))}
             </div>
             <p className={css.p_card}>{description}</p>
-            <NavigationLinks />
-            
+            <NavigationLinks /> 
                 <Outlet />
-            
             <section className={css.booking_form}>
                 <h2>Book your campervan now</h2>
                 <p>Stay connected! We are always ready to help you.</p>
